@@ -61,18 +61,21 @@
       }
 
       .image-container {
+        width: 100%;
         position: relative;
         box-sizing: border-box;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
       }
 
       .image {
-        width: 100%;
-        height: 100%;
-        border-top-right-radius: 1rem;
-        border-top-left-radius: 1rem;
+        background-image: url(./images/image-header-mobile.jpg);
+        background-repeat: no-repeat;
         object-fit: cover;
+        background-size: cover;
+        height: 200px;
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
       }
 
       .overlay {
@@ -81,17 +84,16 @@
         left: 0;
         background-color: var(--Softvioletopaque);
         width: 100%;
-        height: 98.5%;
-        border-top-right-radius: 1rem;
-        border-top-left-radius: 1rem;
+        height: 200px;
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
         opacity: 1;
       }
 
       .description {
         font-family: "Inter", sans-serif;
         font-size: 0.85rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 1rem;
       }
 
       .description p {
@@ -104,13 +106,14 @@
       }
 
       .stats {
-        font-family: "Lexend Deca", sans-serif;
+        margin-top: 2rem;
       }
 
       .stats p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         margin-top: -1rem;
         color: var(--Slightlytransparent);
+        font-family: "Lexend Deca", sans-serif;
       }
 
       h1,
@@ -132,29 +135,36 @@
         main {
           display: flex;
           flex-direction: row-reverse;
-          width: 50%;
+          justify-content: center;
+          align-items: center;
+          width: 60%;
         }
 
         .image-container {
           width: 50%;
-          min-height: 100%;
         }
 
         .image {
-          min-width: 100%;
-          height: auto;
-          object-fit: cover;
-          background: url(images/image-header-desktop.jpg);
+          display: flex;
+          flex-shrink: 0;
+          background-image: url(./images/image-header-desktop.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          width: 100%;
+          height: 375px;
           border-top-left-radius: 0;
-          border-top-right-radius: 1rem;
+          border-top-right-radius: 0.5rem;
           border-top-left-radius: 0;
-          border-bottom-right-radius: 1rem;
+          border-bottom-right-radius: 0.5rem;
         }
 
         .overlay {
-          border-top-right-radius: 1rem;
+          height: 100%;
+          width: 100%;
+          border-top-right-radius: 0.5rem;
           border-top-left-radius: 0;
-          border-bottom-right-radius: 1rem;
+          border-bottom-right-radius: 0.5rem;
         }
 
         .description {
@@ -162,44 +172,59 @@
           flex-direction: column;
           width: 50%;
           height: 100%;
-          object-fit: contain;
-          padding-left: 1rem;
-          padding-right: 1rem;
-          font-size: 50%;
-        }
-
-        .description .details p {
-          font-size: 0.65rem;
-          line-height: 1rem;
-        }
-
-        .stats {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          gap: 1rem;
-        }
-      }
-
-      @media (min-width: 80rem) {
-        .description {
-          display: flex;
-          flex-direction: column;
-          width: 50%;
-          height: 100%;
-          padding-left: 1rem;
-          padding-right: 1rem;
-          font-size: 70%;
-        }
-
-        .overlay {
-          height: 99%;
+          text-align: left;
+          padding-left: 2rem;
+          padding-right: 2rem;
         }
 
         .description .details p {
           font-size: 0.85rem;
           line-height: 1.5rem;
+        }
+
+        .stats {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          margin-top: -0.85rem;
+        }
+      }
+
+      @media (min-width: 80rem) {
+        main {
+          width: 50%;
+        }
+        .description {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          height: 100%;
+          padding-right: 4rem;
+          font-size: 80%;
+          padding-left: 3rem;
+        }
+
+        .stats {
+          gap: 3rem;
+          margin-top: 1rem;
+        }
+
+        .overlay {
+          height: 100%;
+        }
+
+        .image {
+          display: flex;
+          flex-shrink: 0;
+        }
+
+        .description .details p {
+          font-size: 0.8rem;
+          line-height: 1.5rem;
+        }
+
+        .stats p {
+          font-size: 0.5rem;
         }
       }
     </style>
@@ -207,7 +232,8 @@
   <body>
     <main>
       <div class="image-container">
-        <img class="image" src="images/image-header-mobile.jpg" alt="header" />
+        <!-- <img class="image" src="images/image-header-mobile.jpg" alt="header" /> -->
+        <div class="image"></div>
         <div class="overlay"></div>
       </div>
 
@@ -223,7 +249,7 @@
 
         <div class="stats">
           <div class="first">
-            <h2>10k+</h2>
+            <h2>10K+</h2>
             <p>COMPANIES</p>
           </div>
 
@@ -233,7 +259,7 @@
           </div>
 
           <div class="third">
-            <h2>12m+</h2>
+            <h2>12M+</h2>
             <p>QUERIES</p>
           </div>
         </div>
